@@ -22,7 +22,7 @@ storageRef.child('images/').listAll().then(function (result) {
       displayImage(i, imageRef, date, time, current_date);
 
     }
-
+    
   });
   if (i == 0) {
     noimage();
@@ -30,15 +30,16 @@ storageRef.child('images/').listAll().then(function (result) {
   }
 });
 
-var count = 0;
-var new_html = '';
+ 
+ 
 function displayImage(row, images, date, time, current_date) {
   images.getDownloadURL().then(function (url) {
     // console.log(url);
 
     if (date == current_date) {
-      count = count + 1;
-
+      
+       
+      let new_html='';
       new_html += '<tr>';
       new_html += '<td>';
       new_html += 'Date: ' + date + '<br>';
