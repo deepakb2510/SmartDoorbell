@@ -16,13 +16,14 @@ storageRef.child('images/').listAll().then(function (result) {
 
     var d = new Date();
     var months = ["01", "02", "03", "04", "05", "06", "07", '08', '09', '10', '11', '12'];
-    var current_date = d.getFullYear() + '-' + months[d.getMonth()] + '-' + d.getDate();
+    var days=["00","01", "02", "03", "04", "05", "06", "07", '08', '09', '10', '11', '12',"13", "14", "15", "16", "17", "18", "19", '20', '21', '22', '23', '24',"25","26",'27', '28', '29',"30","31"];
+    var current_date = d.getFullYear() + '-' + months[d.getMonth()] + '-' + days[d.getDate()];
     if (date == current_date) {
-      i++;
+      i=i+1;
       displayImage(i, imageRef, date, time, current_date);
 
     }
-    
+    console.log(date,current_date,i);
   });
   if (i == 0) {
     noimage();
